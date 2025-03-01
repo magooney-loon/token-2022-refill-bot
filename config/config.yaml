@@ -1,0 +1,47 @@
+# Solana Token-2022 Auto-Buy Bot Configuration
+
+# Wallet Configuration
+wallet:
+  private_key: "YOUR_PRIVATE_KEY" # Your wallet's private key
+  min_sol_balance: 1.0 # Minimum SOL balance to trigger buy
+  reserve_amount: 0.05 # Amount of SOL to keep for fees
+
+# RPC Configuration
+rpc:
+  endpoint: "YOUR_RPC_ENDPOINT" # Your Solana RPC endpoint
+  retry_attempts: 3
+  timeout_seconds: 30
+
+# Token Configuration
+token:
+  input_mint: "So11111111111111111111111111111111111111112" # The token you want to swap from
+  output_mint: "FEhfph34VeoCfkuiNnv89pEGPiGPukWfhrKtLko66mvj" # The token you want to buy
+  dividend_mint: "BY9Fy6VQmNGoYp87GoiGcLKdQoxx6rgjBuHhf7s1FKLf" # For tax tokens, add the fee mint for calculating your wallets total dividends - ask the dev team for the mint addy
+  swap_amount: 0.1 # Amount of input token to swap
+  slippage_bps: 100 # 1% slippage tolerance (tax buffer added automatically)
+  program_id: "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" # Token-2022 Program ID
+  refresh_cache: true # Force refresh token info cache
+  cache_ttl_minutes: 5 # Token info cache TTL
+
+# Monitor Configuration
+monitor:
+  check_interval_minutes: 10
+  max_retries: 3
+  retry_delay_seconds: 5
+
+# Jupiter Configuration
+jupiter:
+  quote_endpoint: "https://api.jup.ag/swap/v1/quote" # Jupiter Quote API endpoint
+  swap_endpoint: "https://api.jup.ag/swap/v1/swap" # Jupiter Swap API endpoint
+  token_api_endpoint: "https://api.jup.ag/tokens/v1/token" # Jupiter Token API endpoint
+  token_price_endpoint: "https://api.jup.ag/price/v2" # Jupiter Token Price API endpoint
+  only_direct_routes: true # Only use direct swap routes
+
+# Logging Configuration
+logging:
+  level: "debug" # debug, info, warn, error
+  file_path: "logs/bot.log"
+  max_size_mb: 10
+  max_backups: 3
+  max_age_days: 28
+  compress: true 
