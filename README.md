@@ -1,6 +1,7 @@
 # 🤖 Solana Token-2022 Auto-Buy Bot
 
 A smart bot that monitors your SOL balance and automatically buys Token-2022 tokens when conditions are met for auto-compounding yield gains.
+https://www.youtube.com/watch?v=GzZFrpFMNQQ
 
 ## 🎯 What Does This Bot Do?
 
